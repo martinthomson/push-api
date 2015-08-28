@@ -1,5 +1,5 @@
 support_dir ?= $(CURDIR)/.support
-# tidy5 ?= $(shell which tidy5 2>/dev/null)
+tidy5 ?= $(shell which tidy5 2>/dev/null)
 tidy5 ?= $(support_dir)/bin/tidy
 
 $(tidy5): 
@@ -14,3 +14,7 @@ $(tidy5):
 .PHONY: check
 check: $(tidy5)
 	$(tidy5) -quiet -config tidyconf.txt -errors index.html
+
+.PHONY: tidy
+tidy: $(tidy5)
+	-$(tidy5) -quiet -config tidyconf.txt -modify index.html
