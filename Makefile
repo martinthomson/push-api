@@ -4,7 +4,7 @@ tidy ?= $(support_dir)/bin/tidy
 
 .PHONY: install_tidy
 install_tidy: $(tidy)
-$(tidy): 
+$(tidy):
 	if [ ! -d $(support_dir)/tidy-html5 ]; then \
 	  mkdir -p $(support_dir); \
 	  git clone https://github.com/htacg/tidy-html5.git $(support_dir)/tidy-html5; \
