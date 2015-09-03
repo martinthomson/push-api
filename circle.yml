@@ -1,7 +1,6 @@
 dependencies:
   pre:
-    - wget http://www.cmake.org/files/v3.3/cmake-3.3.1-Linux-x86_64.sh
-    - ./cmake-3.3.1-Linux-x86_64.sh --prefix=$PWD/.support
+    - mkdir -p .support && cd .support && wget http://www.cmake.org/files/v3.3/cmake-3.3.1-Linux-x86_64.tar.gz && tar xzf cmake-3.3.1-Linux-x86_64.tar.gz && rm -f cmake-3.3.1-Linux-x86_64.tar.gz
   override:
     - PATH=$PWD/.support/bin:$PATH make install_tidy
 test:
