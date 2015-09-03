@@ -1,6 +1,8 @@
 support_dir ?= $(CURDIR)/.support
 tidy ?= $(shell which tidy 2>/dev/null)
-tidy ?= $(support_dir)/bin/tidy
+ifeq (,$(tidy))
+tidy := $(support_dir)/bin/tidy
+endif
 $(warning tidy is at "$(tidy)")
 
 .PHONY: install_tidy
