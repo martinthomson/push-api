@@ -1,4 +1,0 @@
-sudo: false
-language: c
-install: make install_tidy
-script: make check

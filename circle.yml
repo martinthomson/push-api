@@ -1,0 +1,6 @@
+dependencies:
+  override:
+    - make install_tidy
+test:
+  override:
+    - make check
