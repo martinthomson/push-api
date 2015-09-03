@@ -5,4 +5,5 @@ dependencies:
     - make cmake="$PWD/.support/bin/cmake" install_tidy
 test:
   override:
+    - find .support -print
     - make check
