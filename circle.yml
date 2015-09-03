@@ -1,6 +1,9 @@
 dependencies:
+  pre:
+    - curl http://www.cmake.org/files/v3.3/cmake-3.3.1-Linux-x86_64.sh
+    - ./cmake-3.3.1-Linux-x86_64.sh --prefix=$PWD/.support
   override:
-    - make install_tidy
+    - PATH=$PWD/.support/bin:$PATH make install_tidy
 test:
   override:
     - make check
